@@ -56,3 +56,39 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 print(f'O total de horas trabalhadas é :{total_horas_trabalhadas} horas')
+
+Bugs
+
+bugs_corrigidos = tabela['Bugs Corrigidos']
+
+total_bugs_corrigidos = soma_informacao(bugs_corrigidos)
+
+media_diaria_bugs_corrigidos = media_informacao(bugs_corrigidos)
+
+# Criando o gráfico
+plt.figure(figsize=(10, 6))
+
+# Plotando as barras das horas trabalhadas por dia
+plt.bar(dias, bugs_corrigidos, color='orange')
+
+# Adicionando a linha da média diária
+plt.axhline(y=media_diaria_bugs_corrigidos, color='blue', linestyle='--', label=f'Média de Correção por dia: {media_diaria_bugs_corrigidos} correções')
+
+# Adicionando título e rótulos
+plt.title('Bugs corrigiddos por dia')
+plt.xlabel('Dias da semana')
+plt.ylabel('Bugs Corrigidos')
+
+# Adicionando a legenda
+plt.legend()
+
+# Rotacionando os rótulos dos dias para melhor visualização
+plt.xticks(rotation=45)
+
+# Mostrando o gráfico
+plt.tight_layout()
+
+
+plt.show()
+
+print(f'O total de bugs corrigidos é: {total_bugs_corrigidos}')
