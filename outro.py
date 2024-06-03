@@ -150,3 +150,39 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+
+Efetividade solução de bugs
+Considerando que a correção de bugs também é uma tarefa, podemos ver a efetividade. A efetividade é a relação da quantidade de bugs resolvidos em relação as horas trabalhadas.
+
+
+efetividade = round(bugs_corrigidos/horas_trabalhadas,2)*100
+
+
+media_efetividade = media_informacao(efetividade)
+
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Plotando a efetividade
+ax1.plot(dias, efetividade, label='Efetividade (%)', color='b')
+ax1.axhline(y=media_efetividade, color='r', linestyle='--', label=f'Média de Efetividade {media_efetividade:.2f}%')
+ax1.set_xlabel('Dias da semana')
+ax1.set_ylabel('Efetividade (%)', color='b')
+ax1.tick_params(axis='y', labelcolor='b')
+
+# Criando um segundo eixo y para as horas trabalhadas
+ax2 = ax1.twinx()
+ax2.bar(dias, horas_trabalhadas, alpha=0.6, color='g', label='Horas Trabalhadas')
+ax2.set_ylabel('Horas Trabalhadas', color='g')
+ax2.tick_params(axis='y', labelcolor='g')
+
+fig.tight_layout()
+fig.suptitle('Solução de bugs', y=1.03)
+ax1.legend(loc='upper left')
+ax2.legend(loc='upper right')
+
+
+ax1.grid(True)
+
+plt.show()
