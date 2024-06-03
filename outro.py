@@ -127,3 +127,26 @@ plt.tight_layout()
 plt.show()
 
 print(f'O total de tarefas concluidas é: {total_tarefas_concluidas}')
+
+Produtividade Diária (Tarefas Concluídas por Hora)
+
+produtividade = round(tarefas_concluidas/horas_trabalhadas,2)*100
+
+media_produtividade =media_informacao(produtividade)
+
+# Criando o gráfico
+plt.figure(figsize=(10, 6))
+
+plt.plot(dias,produtividade,color='#a5d141')
+plt.axhline(y=media_produtividade, color='purple', linestyle='--', label=f'Media de Produtividade: {media_produtividade}%')
+
+# Adicionando título e rótulos
+plt.title('Produtividade Diária')
+plt.xlabel('Dias da semana')
+plt.ylabel('Produtividade (%)')
+plt.legend()
+
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
