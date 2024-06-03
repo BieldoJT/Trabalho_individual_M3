@@ -92,3 +92,38 @@ plt.tight_layout()
 plt.show()
 
 print(f'O total de bugs corrigidos é: {total_bugs_corrigidos}')
+
+
+Tarefas
+
+tarefas_concluidas = tabela['Tarefas Concluídas']
+
+total_tarefas_concluidas = soma_informacao(tarefas_concluidas)
+
+media_diaria_tarefas_concluidas =media_informacao(tarefas_concluidas)
+
+# Criando o gráfico
+plt.figure(figsize=(10, 6))
+
+# Plotando as barras das horas trabalhadas por dia
+plt.bar(dias, tarefas_concluidas, color='pink')
+
+# Adicionando a linha da média diária
+plt.axhline(y=media_diaria_tarefas_concluidas, color='purple', linestyle='--', label=f'Média tarefas por dia: {media_diaria_tarefas_concluidas}')
+
+# Adicionando título e rótulos
+plt.title('Tarefas por dia')
+plt.xlabel('Dias da semana')
+plt.ylabel('Tarefas concluidas')
+
+# Adicionando a legenda
+plt.legend()
+
+# Rotacionando os rótulos dos dias para melhor visualização
+plt.xticks(rotation=45)
+
+# Mostrando o gráfico
+plt.tight_layout()
+plt.show()
+
+print(f'O total de tarefas concluidas é: {total_tarefas_concluidas}')
