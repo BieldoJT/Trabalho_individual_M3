@@ -186,3 +186,19 @@ ax2.legend(loc='upper right')
 ax1.grid(True)
 
 plt.show()
+
+Correlação entre Horas trabalhadas, Bugs Corrigidos e Tarefas Concluídas
+
+
+
+# Calcular a matriz de correlação
+corr = tabela[['Horas Trabalhadas', 'Bugs Corrigidos', 'Tarefas Concluídas']].corr()
+
+# Plotar o gráfico de calor da matriz de correlação
+plt.figure(figsize=(10, 5))
+sns.heatmap(corr, annot=True, cmap='coolwarm', center=0)
+plt.title('Matriz de Correlação')
+
+plt.yticks(rotation=45)
+plt.xticks(rotation=45)
+plt.show()
