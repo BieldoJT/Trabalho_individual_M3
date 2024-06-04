@@ -5,6 +5,7 @@ Este é um projeto de análise de produtividade semanal que examina as horas tra
 # Estrutura do Projeto
 
 relatorio.ipynb: Notebook Jupyter contendo o código de análise.
+
 dados: Diretório que armazena os dados.
 
 # Contribuição
